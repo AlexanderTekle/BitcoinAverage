@@ -10,42 +10,126 @@ namespace BitcoinAverage._42
     public sealed class R
     {
         
+        public sealed class Drawables
+        {
+            
+            public const int Icon = 0x7f020000;
+            
+            public const int Refresh = 0x7f020001;
+        }
+        
         public sealed class Layouts
         {
             
-            public const int MainLayout = 0x7f020000;
+            public const int MainLayout = 0x7f030000;
         }
         
         public sealed class Ids
         {
             
-            public const int tableLayout1 = 0x7f030035;
+            public const int textView1 = 0x7f040035;
             
-            public const int tableRow1 = 0x7f030036;
+            public const int tableLayout1 = 0x7f040036;
             
-            public const int textView10 = 0x7f030037;
+            public const int tableRow1 = 0x7f040037;
             
-            public const int txtLastPrice = 0x7f030038;
+            public const int textView10 = 0x7f040038;
             
-            public const int tableRow2 = 0x7f030039;
+            public const int txtLastPrice = 0x7f040039;
             
-            public const int textView12 = 0x7f03003a;
+            public const int tableRow2 = 0x7f04003a;
             
-            public const int txtAsk = 0x7f03003b;
+            public const int textView12 = 0x7f04003b;
             
-            public const int tableRow3 = 0x7f03003c;
+            public const int txtAsk = 0x7f04003c;
             
-            public const int textView13 = 0x7f03003d;
+            public const int tableRow3 = 0x7f04003d;
             
-            public const int txtBid = 0x7f03003e;
+            public const int textView13 = 0x7f04003e;
             
-            public const int tableRow4 = 0x7f03003f;
+            public const int txtBid = 0x7f04003f;
             
-            public const int txtVolume = 0x7f030040;
+            public const int tableRow4 = 0x7f040040;
             
-            public const int tableRow5 = 0x7f030041;
+            public const int txtVolume = 0x7f040041;
             
-            public const int txtAvg = 0x7f030042;
+            public const int tableRow5 = 0x7f040042;
+            
+            public const int txtAvg = 0x7f040043;
+            
+            public const int txtPricesOnExchanges = 0x7f040044;
+            
+            public const int tblExchanges = 0x7f040045;
+            
+            public const int textView23 = 0x7f040046;
+            
+            public const int txtRow0Exchange = 0x7f040047;
+            
+            public const int txtRow0Volume = 0x7f040048;
+            
+            public const int txtRow0Price = 0x7f040049;
+            
+            public const int txtRow1Exchange = 0x7f04004a;
+            
+            public const int txtRow1Volume = 0x7f04004b;
+            
+            public const int txtRow1Price = 0x7f04004c;
+            
+            public const int txtRow2Exchange = 0x7f04004d;
+            
+            public const int txtRow2Volume = 0x7f04004e;
+            
+            public const int txtRow2Price = 0x7f04004f;
+            
+            public const int txtRow3Exchange = 0x7f040050;
+            
+            public const int txtRow3Volume = 0x7f040051;
+            
+            public const int txtRow3Price = 0x7f040052;
+            
+            public const int txtRow4Exchange = 0x7f040053;
+            
+            public const int txtRow4Volume = 0x7f040054;
+            
+            public const int txtRow4Price = 0x7f040055;
+            
+            public const int txtRow5Exchange = 0x7f040056;
+            
+            public const int txtRow5Volume = 0x7f040057;
+            
+            public const int txtRow5Price = 0x7f040058;
+            
+            public const int txtRow6Exchange = 0x7f040059;
+            
+            public const int txtRow6Volume = 0x7f04005a;
+            
+            public const int txtRow6Price = 0x7f04005b;
+            
+            public const int txtRow7Exchange = 0x7f04005c;
+            
+            public const int txtRow7Volume = 0x7f04005d;
+            
+            public const int txtRow7Price = 0x7f04005e;
+            
+            public const int txtRow8Exchange = 0x7f04005f;
+            
+            public const int txtRow8Volume = 0x7f040060;
+            
+            public const int txtRow8Price = 0x7f040061;
+            
+            public const int txtRow9Exchange = 0x7f040062;
+            
+            public const int txtRow9Volume = 0x7f040063;
+            
+            public const int txtRow9Price = 0x7f040064;
+            
+            public const int item1 = 0x7f040065;
+        }
+        
+        public sealed class Menus
+        {
+            
+            public const int Menu = 0x7f050000;
         }
     }
 }

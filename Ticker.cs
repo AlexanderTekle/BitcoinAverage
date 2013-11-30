@@ -12,6 +12,11 @@ namespace BitcoinAverage
 		//public string timestamp { get; private set; }
 		public double total_vol { get; private set; }
 
+        public Ticker()
+        {
+            avg = ask = bid = last = total_vol = -1;
+        }
+
         public Ticker(string json)
         {
             var tkr = new JSONObject(json);

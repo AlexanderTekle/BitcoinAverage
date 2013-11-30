@@ -12,7 +12,7 @@
     <RootNamespace>BitcoinAverage._42</RootNamespace>
     <AssemblyName>BitcoinAverage.42</AssemblyName>
     <TargetFrameworkIdentifier>Android</TargetFrameworkIdentifier>
-    <TargetFrameworkVersion>v4.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
     <AndroidVersion>$(TargetFrameworkVersion)</AndroidVersion>
     <SupportedCultures>
     </SupportedCultures>
@@ -55,6 +55,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Exchange.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Ticker.cs" />
     <Compile Include="Utility.cs" />
@@ -65,6 +66,15 @@
   <Import Project="$(Dot42ExtensionsPath)\Dot42.CSharp.targets" />
   <ItemGroup>
     <Compile Include="$(ResourcesGeneratedCodePath)R.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <MenuResource Include="Menu.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <DrawableResource Include="Assets\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <DrawableResource Include="Assets\Refresh.png" />
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
