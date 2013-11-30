@@ -13,6 +13,7 @@ using Android.View;
 using Java.Util.Concurrent;
 using BitcoinAverage._42;
 using Android.Graphics;
+using Android.Content.Res;
 
 [assembly: Application("Bitcoin Average", Icon="@drawable/icon")]
 [assembly: UsesPermission(Android.Manifest.Permission.INTERNET)]
@@ -43,7 +44,7 @@ namespace BitcoinAverage
         {
             base.OnCreate(savedInstance);
 
-            SetContentView(R.Layouts.MainLayout);
+            SetContentView(GetResources().GetConfiguration().Orientation == Configuration.ORIENTATION_LANDSCAPE ? R.Layouts.MainLayoutLandscape : R.Layouts.MainLayout);
 
             tblExchanges.SetVisibility(View.INVISIBLE);
             txtPricesOnExchanges.SetVisibility(View.INVISIBLE);

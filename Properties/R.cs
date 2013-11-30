@@ -22,6 +22,8 @@ namespace BitcoinAverage._42
         {
             
             public const int MainLayout = 0x7f030000;
+            
+            public const int MainLayoutLandscape = 0x7f030001;
         }
         
         public sealed class Ids

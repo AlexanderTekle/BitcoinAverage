@@ -110,14 +110,15 @@
       android:id="@+id/tblExchanges"
       android:layout_gravity="center"
       android:gravity="center">
-    <TableRow>
 
+    <TableRow>
       <TextView
           android:id="@+id/textView23"
           android:layout_column="0"
           android:layout_marginRight="10dp"
           android:text="Exchange"
-          android:textStyle="bold" />
+          android:textStyle="bold"
+          android:layout_gravity="center"/>
 
       <TextView
           android:text="Volume"
@@ -126,14 +127,14 @@
           android:layout_marginLeft="10dp"
           android:layout_marginRight="10dp"
           android:textStyle="bold"
-          android:layout_gravity="center" />
+          android:layout_gravity="center"/>
       <TextView
           android:text="Rate"
           android:layout_column="2"
           android:id="@+id/txtVolume"
           android:layout_marginLeft="10dp"
           android:textStyle="bold"
-          android:layout_gravity="right" />
+          android:layout_gravity="center"/>
     </TableRow>
 
     <TableRow>

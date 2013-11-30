@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:minHeight="25px"
+		android:minWidth="25px"
+		android:orientation="horizontal" >
+
+	<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="fill_parent"
+			android:layout_weight="1"
+			android:orientation="vertical" >
+
+		<TextView
+				android:id="@+id/textView1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="20dp"
+				android:text="Aggregate Info:"
+				android:textAppearance="?android:attr/textAppearanceLarge" />
+
+		<TableLayout
+				android:id="@+id/tableLayout1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:minHeight="25px"
+				android:minWidth="25px" >
+
+			<TableRow android:id="@+id/tableRow1" >
+
+				<TextView
+						android:id="@+id/textView10"
+						android:layout_column="0"
+						android:layout_marginRight="10dp"
+						android:text="Last Price" />
+
+				<TextView
+						android:id="@+id/txtLastPrice"
+						android:layout_column="1"
+						android:layout_gravity="right"
+						android:layout_marginLeft="10dp"
+						android:text="N/A" />
+			</TableRow>
+
+			<TableRow android:id="@+id/tableRow2" >
+
+				<TextView
+						android:id="@+id/textView12"
+						android:layout_column="0"
+						android:layout_marginRight="10dp"
+						android:text="Ask" />
+
+				<TextView
+						android:id="@+id/txtAsk"
+						android:layout_column="1"
+						android:layout_gravity="right"
+						android:layout_marginLeft="10dp"
+						android:text="N/A" />
+			</TableRow>
+
+			<TableRow android:id="@+id/tableRow3" >
+
+				<TextView
+						android:id="@+id/textView13"
+						android:layout_column="0"
+						android:layout_marginRight="10dp"
+						android:text="Bid" />
+
+				<TextView
+						android:id="@+id/txtBid"
+						android:layout_column="1"
+						android:layout_gravity="right"
+						android:layout_marginLeft="10dp"
+						android:text="N/A" />
+			</TableRow>
+
+			<TableRow android:id="@+id/tableRow4" >
+
+				<TextView
+						android:id="@+id/textView13"
+						android:layout_column="0"
+						android:layout_marginRight="10dp"
+						android:text="24h Volume" />
+
+				<TextView
+						android:id="@+id/txtVolume"
+						android:layout_column="1"
+						android:layout_gravity="right"
+						android:layout_marginLeft="10dp"
+						android:text="N/A" />
+			</TableRow>
+
+			<TableRow android:id="@+id/tableRow5" >
+
+				<TextView
+						android:id="@+id/textView13"
+						android:layout_column="0"
+						android:layout_marginRight="10dp"
+						android:text="24h Average" />
+
+				<TextView
+						android:id="@+id/txtAvg"
+						android:layout_column="1"
+						android:layout_gravity="right"
+						android:layout_marginLeft="10dp"
+						android:text="N/A" />
+			</TableRow>
+		</TableLayout>
+
+	</LinearLayout>
+
+	<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="fill_parent"
+			android:layout_weight="1"
+			android:orientation="vertical" >
+
+		<TextView
+				android:id="@+id/txtPricesOnExchanges"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="20dp"
+				android:text="Prices on Exchanges:"
+				android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TableLayout
+				android:minWidth="25px"
+				android:minHeight="25px"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/tblExchanges">
+
+      <TableRow>
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_column="0"
+            android:layout_marginRight="10dp"
+            android:text="Exchange"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:text="Volume"
+            android:layout_column="1"
+            android:id="@+id/txtVolume"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+        <TextView
+            android:text="Rate"
+            android:layout_column="2"
+            android:id="@+id/txtVolume"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+      </TableRow>
+
+      <TableRow>
+        <TextView android:layout_column="0" android:id="@+id/txtRow0Exchange" android:layout_marginRight="10dp" />
+        <TextView android:layout_column="1" android:id="@+id/txtRow0Volume" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_gravity="center" />
+        <TextView android:layout_column="2" android:id="@+id/txtRow0Price" android:layout_marginLeft="10dp" android:layout_gravity="right" />
+      </TableRow>
+
+      <TableRow>
+        <TextView android:layout_column="0" android:id="@+id/txtRow1Exchange" android:layout_marginRight="10dp" />
+        <TextView android:layout_column="1" android:id="@+id/txtRow1Volume" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_gravity="center" />
+        <TextView android:layout_column="2" android:id="@+id/txtRow1Price" android:layout_marginLeft="10dp" android:layout_gravity="right" />
+      </TableRow>
+
+      <TableRow>
+        <TextView android:layout_column="0" android:id="@+id/txtRow2Exchange" android:layout_marginRight="10dp" />
+        <TextView android:layout_column="1" android:id="@+id/txtRow2Volume" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_gravity="center" />
+        <TextView android:layout_column="2" android:id="@+id/txtRow2Price" android:layout_marginLeft="10dp" android:layout_gravity="right" />
+      </TableRow>
+
+      <TableRow>
+        <TextView android:layout_column="0" android:id="@+id/txtRow3Exchange" android:layout_marginRight="10dp" />
+        <TextView android:layout_column="1" android:id="@+id/txtRow3Volume" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_gravity="center" />
+        <TextView android:layout_column="2" android:id="@+id/txtRow3Price" android:layout_marginLeft="10dp" android:layout_gravity="right" />
+      </TableRow>
+
+      <TableRow>
+        <TextView android:layout_column="0" android:id="@+id/txtRow4Exchange" android:layout_marginRight="10dp" />
+        <TextView android:layout_column="1" android:id="@+id/txtRow4Volume" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_gravity="center" />
+        <TextView android:layout_column="2" android:id="@+id/txtRow4Price" android:layout_marginLeft="10dp" android:layout_gravity="right" />
+      </TableRow>
+
+      <TableRow>
+        <TextView android:layout_column="0" android:id="@+id/txtRow5Exchange" android:layout_marginRight="10dp" />
+        <TextView android:layout_column="1" android:id="@+id/txtRow5Volume" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_gravity="center" />
+        <TextView android:layout_column="2" android:id="@+id/txtRow5Price" android:layout_marginLeft="10dp" android:layout_gravity="right" />
+      </TableRow>
+
+      <TableRow>
+        <TextView android:layout_column="0" android:id="@+id/txtRow6Exchange" android:layout_marginRight="10dp" />
+        <TextView android:layout_column="1" android:id="@+id/txtRow6Volume" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_gravity="center" />
+        <TextView android:layout_column="2" android:id="@+id/txtRow6Price" android:layout_marginLeft="10dp" android:layout_gravity="right" />
+      </TableRow>
+
+      <TableRow>
+        <TextView android:layout_column="0" android:id="@+id/txtRow7Exchange" android:layout_marginRight="10dp" />
+        <TextView android:layout_column="1" android:id="@+id/txtRow7Volume" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_gravity="center" />
+        <TextView android:layout_column="2" android:id="@+id/txtRow7Price" android:layout_marginLeft="10dp" android:layout_gravity="right" />
+      </TableRow>
+
+      <TableRow>
+        <TextView android:layout_column="0" android:id="@+id/txtRow8Exchange" android:layout_marginRight="10dp" />
+        <TextView android:layout_column="1" android:id="@+id/txtRow8Volume" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_gravity="center" />
+        <TextView android:layout_column="2" android:id="@+id/txtRow8Price" android:layout_marginLeft="10dp" android:layout_gravity="right" />
+      </TableRow>
+
+      <TableRow>
+        <TextView android:layout_column="0" android:id="@+id/txtRow9Exchange" android:layout_marginRight="10dp" />
+        <TextView android:layout_column="1" android:id="@+id/txtRow9Volume" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_gravity="center" />
+        <TextView android:layout_column="2" android:id="@+id/txtRow9Price" android:layout_marginLeft="10dp" android:layout_gravity="right" />
+      </TableRow>
+
+
+    </TableLayout>
+	</LinearLayout>
+
+</LinearLayout>
