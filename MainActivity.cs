@@ -17,6 +17,7 @@ using Android.Content.Res;
 
 [assembly: Application("Bitcoin Average", Icon="@drawable/icon")]
 [assembly: UsesPermission(Android.Manifest.Permission.INTERNET)]
+[assembly: Package(VersionName = "1.0.0", VersionCode = 2)]
 
 namespace BitcoinAverage
 {
@@ -37,6 +38,8 @@ namespace BitcoinAverage
         TextView[] xPrice { get; set; }
 
         Ticker lastTicker = new Ticker();
+        HashMap<string, double> lastExchangePrice = new HashMap<string, double>();
+        HashMap<string, int> lastExchangeColor = new HashMap<string, int>();
         ScheduledThreadPoolExecutor updater;
         int originalTextColor;
 
@@ -165,7 +168,7 @@ namespace BitcoinAverage
                     SetTextAndColor(txtAsk, "{0:C}", tkr.ask, lastTicker.ask);
                     SetTextAndColor(txtBid, "{0:C}", tkr.bid, lastTicker.bid);
                     SetTextAndColor(txtAvg, "{0:C}", tkr.avg, lastTicker.avg);
-                    SetTextAndColor(txtVolume, "฿{0:0,000.00}", tkr.total_vol, lastTicker.total_vol);
+                    SetTextAndColor(txtVolume, "฿{0:0,000}", tkr.total_vol, lastTicker.total_vol);
                 });
 
                 lastTicker = tkr;
@@ -185,12 +188,21 @@ namespace BitcoinAverage
                             xExchange[i].Text = "";
                             xVolume[i].Text = "";
                             xPrice[i].Text = "";
+                            xPrice[i].SetTextColor(originalTextColor);
                         }
                         else
                         {
                             xExchange[i].Text = xch[i].name;
                             xVolume[i].Text = string.Format("{0:0.00}%", xch[i].volume_percent);
                             xPrice[i].Text = string.Format("{0:C}", xch[i].last);
+
+                            int newColor = lastExchangeColor.ContainsKey(xch[i].name) ? lastExchangeColor.Get(xch[i].name) : originalTextColor;
+                            if (lastExchangePrice.ContainsKey(xch[i].name) && lastExchangePrice.Get(xch[i].name) > xch[i].last) newColor = Color.RED;
+                            if (lastExchangePrice.ContainsKey(xch[i].name) && lastExchangePrice.Get(xch[i].name) < xch[i].last) newColor = Color.GREEN;
+
+                            xPrice[i].SetTextColor(newColor);
+                            lastExchangeColor.Put(xch[i].name, newColor);
+                            lastExchangePrice.Put(xch[i].name, xch[i].last);
                         }
                     }
                     txtPricesOnExchanges.SetVisibility(View.VISIBLE);

@@ -61,14 +61,18 @@
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
-    <LayoutResource Include="MainLayout.xml" />
+    <LayoutResource Include="MainLayout.xml">
+      <SubType>Designer</SubType>
+    </LayoutResource>
   </ItemGroup>
   <Import Project="$(Dot42ExtensionsPath)\Dot42.CSharp.targets" />
   <ItemGroup>
     <Compile Include="$(ResourcesGeneratedCodePath)R.cs" />
   </ItemGroup>
   <ItemGroup>
-    <MenuResource Include="Menu.xml" />
+    <MenuResource Include="Menu.xml">
+      <SubType>Designer</SubType>
+    </MenuResource>
   </ItemGroup>
   <ItemGroup>
     <DrawableResource Include="Assets\Icon.png" />
