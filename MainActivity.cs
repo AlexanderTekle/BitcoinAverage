@@ -15,9 +15,9 @@ using BitcoinAverage._42;
 using Android.Graphics;
 using Android.Content.Res;
 
-[assembly: Application("Bitcoin Average", Icon="@drawable/icon")]
+[assembly: Application("Bitcoin Average Reports", Icon="@drawable/icon")]
 [assembly: UsesPermission(Android.Manifest.Permission.INTERNET)]
-[assembly: Package(VersionName = "1.0.0", VersionCode = 2)]
+[assembly: Package(VersionName = "1.0.5", VersionCode = 5)]
 
 namespace BitcoinAverage
 {
@@ -217,8 +217,7 @@ namespace BitcoinAverage
 
                 RunOnUiThread(() =>
                 {
-                    var toast = new Toast(this);
-                    toast.SetText("DoUpdateTicker failed");
+                    var toast = Toast.MakeText(this, "DoUpdateTicker failed", Toast.LENGTH_LONG);
                     toast.Show();
                 });
             }
