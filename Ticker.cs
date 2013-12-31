@@ -18,7 +18,13 @@ namespace BitcoinAverage
         }
 
         public Ticker(string json)
+            : this()
         {
+            if (json == null)
+            {
+                return;
+            }
+
             var tkr = new JSONObject(json);
 
             avg = GetDouble(tkr, "24h_avg");

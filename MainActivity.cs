@@ -14,10 +14,11 @@ using Java.Util.Concurrent;
 using BitcoinAverage._42;
 using Android.Graphics;
 using Android.Content.Res;
+using System.Threading;
 
 [assembly: Application("Bitcoin Average Reports", Icon="@drawable/icon")]
 [assembly: UsesPermission(Android.Manifest.Permission.INTERNET)]
-[assembly: Package(VersionName = "1.0.5", VersionCode = 5)]
+[assembly: Package(VersionName = "1.0.6", VersionCode = 6)]
 
 namespace BitcoinAverage
 {
@@ -42,6 +43,7 @@ namespace BitcoinAverage
         HashMap<string, int> lastExchangeColor = new HashMap<string, int>();
         ScheduledThreadPoolExecutor updater;
         int originalTextColor;
+        bool isUpdating = false;
 
         protected override void OnCreate(Bundle savedInstance)
         {
@@ -144,17 +146,46 @@ namespace BitcoinAverage
             //}
         }
 
+        void RunOnUiThread2(Action action)
+        {
+            Exception e = null;
+            RunOnUiThread(() =>
+            {
+                try
+                {
+                    action();
+                }
+                catch(Exception ex)
+                {
+                    e = ex;
+                }
+            });
+
+            if (e != null)
+            {
+                Log.E("Main", "RunOnUiThread2 failed", e);
+                throw e;
+            }
+        }
+
         void DoUpdateTicker(bool showPopup)
         {
+            if (isUpdating)
+            {
+                return;
+            }
+
+            isUpdating = true;
             ProgressDialog pd = null;
             try
             {
                 if (showPopup)
                 {
-                    RunOnUiThread(() =>
+                    RunOnUiThread2(() =>
                     {
                         pd = new ProgressDialog(this);
-                        pd.SetTitle("Getting data...");
+                        pd.SetTitle("Refresh");
+                        pd.SetMessage("Getting data...");
                         pd.Show();
                     });
                 }
@@ -162,7 +193,7 @@ namespace BitcoinAverage
                 var content = Utility.WebGet("https://api.bitcoinaverage.com/ticker/USD");
                 var tkr = new Ticker(content);
 
-                RunOnUiThread(() =>
+                RunOnUiThread2(() =>
                 {
                     SetTextAndColor(txtLastPrice, "{0:C}", tkr.last, lastTicker.last);
                     SetTextAndColor(txtAsk, "{0:C}", tkr.ask, lastTicker.ask);
@@ -179,7 +210,7 @@ namespace BitcoinAverage
                     .Take(xExchange.Length)
                     .ToArray();
 
-                RunOnUiThread(() =>
+                RunOnUiThread2(() =>
                 {
                     for (int i = 0; i < xExchange.Length; ++i)
                     {
@@ -215,18 +246,17 @@ namespace BitcoinAverage
             {
                 Log.E("Main", "DoUpdateTicker failed", ex);
 
-                RunOnUiThread(() =>
-                {
-                    var toast = Toast.MakeText(this, "DoUpdateTicker failed", Toast.LENGTH_LONG);
-                    toast.Show();
-                });
+                RunOnUiThread2(() => { if (pd != null) pd.SetMessage("Failed to update ticker"); });
+                Thread.Sleep(3000);
             }
             finally
             {
                 if (pd != null)
                 {
-                    RunOnUiThread(() => pd.Dismiss());
+                    RunOnUiThread2(() => { if (pd != null) pd.Dismiss(); });
                 }
+
+                isUpdating = false;
             }
         }
     }
